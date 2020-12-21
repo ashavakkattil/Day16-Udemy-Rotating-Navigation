@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: rgb(20, 105, 105);
+  color: #222222;
+}
+ul {
+  list-style: none;
+}
+.container {
+  max-width: 100vw;
+  background: #fafafa;
+  min-height: 100vh;
+  padding: 50px 60px;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+}
+.container.show {
+  transform: rotate(-20deg);
+}
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+.circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: rgb(206, 106, 123);
+  position: relative;
+  transition: transform 0.5s linear;
+}
+/* When the container has show class then circle will be styled as follows */
+.container.show .circle {
+  transform: rotate(-70deg);
+}
+.circle a {
+  color: #fafafa;
+  position: absolute;
+  top: 65%;
+  font-size: 23px;
+}
+.circle a#nav-close {
+  left: 50px;
+  top: 120px;
+}
+.circle a#nav-open {
+  left: 65%;
+}
+.content {
+  padding: 50px;
+  height: 100%;
+}
+
+.nav-bar {
+  color: white;
+  position: fixed;
+  bottom: 10%;
+  left: 2%;
+}
+.nav-bar li {
+  margin: 20px 0px;
+  text-transform: uppercase;
+  font-size: 230x;
+  transform: translateX(-100%);
+  transition: transform 0.5s 0.3s linear;
+}
+
+.nav-bar li i {
+  margin-right: 10px;
+}
+
+/* To get the slanting effect on li */
+/* Second li */
+.nav-bar li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+/* Third li */
+.nav-bar li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+.container.show + .nav-bar li {
+  transform: translateX(0);
+}
